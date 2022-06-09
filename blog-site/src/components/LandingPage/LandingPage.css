@@ -1,0 +1,20 @@
+.landingPage {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.landingPageImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+.title {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    margin: 0 auto;
+    width:100%;
+    bottom: 40%;
+    color: white
+}

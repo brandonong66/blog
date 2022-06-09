@@ -1,8 +1,15 @@
-import React from 'react'
+import { Typography } from "@mui/material"
+import React from "react"
+import "./LandingPage.css"
 
-function LandingPage() {
+const LandingPage = ({ imageSrc }) => {
   return (
-    <div>LandingPage</div>
+    <div className="landingPage">
+      <img src={imageSrc} alt="Background Image" className="landingPageImage" />
+      <div className="title">
+        <Typography variant="h3">Welcome</Typography>
+      </div>
+    </div>
   )
 }
 
