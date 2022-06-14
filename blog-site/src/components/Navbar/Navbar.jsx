@@ -9,10 +9,7 @@ function Navbar() {
         <Grid container xs={4}>
           <Grid item>
             <Box>
-              <Typography
-                variant="h6"
-                noWrap={true}
-              >
+              <Typography variant="h6" noWrap={true} color="text.primary">
                 Brandon's Bimmers
               </Typography>
             </Box>
@@ -21,17 +18,23 @@ function Navbar() {
         <Grid container spacing={2} justifyContent="flex-end" xs={8}>
           <Grid item>
             <Link href="/" underline="none" color="inherit">
-              <Typography variant="h6">Home</Typography>
+              <Typography variant="h6" color="text.primary">
+                Home
+              </Typography>
             </Link>
           </Grid>
           <Grid item>
             <Link href="/gallery" underline="none" color="inherit">
-              <Typography variant="h6">Gallery</Typography>
+              <Typography variant="h6" color="text.primary">
+                Gallery
+              </Typography>
             </Link>
           </Grid>
           <Grid item>
             <Link href="/about" underline="none" color="inherit">
-              <Typography variant="h6">About</Typography>
+              <Typography variant="h6" color="text.primary">
+                About
+              </Typography>
             </Link>
           </Grid>
         </Grid>

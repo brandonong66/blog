@@ -2,9 +2,16 @@ import React from "react"
 import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material"
 // import { sizing } from "@mui/system"
 import pic from "../../../assets/E36-4-0.jpg"
+import "./PostCard.css"
+
 function PostCard() {
   return (
-    <Card>
+    <Card className="card"
+      sx={{
+        "&:hover": { boxShadow: 15 },
+        borderRadius: "0",
+      }}
+    >
       <Box
         sx={{
           display: "flex",
