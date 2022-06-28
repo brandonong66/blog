@@ -15,7 +15,7 @@ function HomePage() {
     <Container>
       <Grid container rowSpacing={1} maxHeight={{ xs: "25%" }}>
         <Grid item xs={12}>
-              <PostCard />
+          <PostCard />
         </Grid>
         <Grid item xs={12}>
           <PostCard />

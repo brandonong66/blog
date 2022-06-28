@@ -2,13 +2,26 @@ import React from "react"
 import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material"
 // import { sizing } from "@mui/system"
 import pic from "../../../assets/E36-4-0.jpg"
-import "./PostCard.css"
 
 function PostCard() {
+  // const[data, setData] = useState(null)
+  // const [isLoading, setIsLoading] = useState(false)
+  // const getData = async => {
+  //   await Axios.get("https://").then((res) => {
+  //     setData(res.data)
+  //     setIsLoading(true)
+  //   })
+  // }
+  //https://www.youtube.com/watch?v=5N4Pxv1BIio
+
+
   return (
-    <Card className="card"
+    <Card
+      className="card"
       sx={{
-        "&:hover": { boxShadow: 15 },
+        transition: "transform 0.2s ease-in-out",
+        "&:hover": { boxShadow: 15,
+        transform: "scale(1.05)" },
         borderRadius: "0",
       }}
     >
