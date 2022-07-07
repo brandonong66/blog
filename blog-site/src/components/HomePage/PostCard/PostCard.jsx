@@ -49,19 +49,6 @@ function PostCard() {
         </CardContent>
       </Box>
     </Card>
-
-    // <Box sx={{ height: "10%" }}>
-    //   <Card>
-
-    //     <CardMedia component="img" image={pic} alt="post image" height="100" />
-    //     <CardContent>
-    //       <Typography variant="h3">Title</Typography>
-    //       <Typography variant="body1">
-    //         This is the main text body of the post
-    //       </Typography>
-    //     </CardContent>
-    //   </Card>
-    // </Box>
   )
 }
 
