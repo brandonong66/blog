@@ -1,6 +1,6 @@
 import React from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { Typography, Container, makeStyles, Box } from "@mui/material"
+import { Container, Box } from "@mui/material"
 
 import "./App.css"
 import "@fontsource/roboto/300.css"
@@ -13,11 +13,8 @@ import Navbar from "./components/Navbar"
 import AboutPage from "./components/AboutPage"
 import GalleryPage from "./components/GalleryPage"
 import HomePage from "./components/HomePage"
-import LandingPage from "./components/LandingPage"
 
-import LandingPageImage from "./assets/E36-4-0.jpg"
-
-import { styled, ThemeProvider, createTheme } from "@mui/material/styles"
+import { ThemeProvider, createTheme } from "@mui/material/styles"
 import CssBaseline from "@mui/material/CssBaseline"
 const darkTheme = createTheme({
   palette: {

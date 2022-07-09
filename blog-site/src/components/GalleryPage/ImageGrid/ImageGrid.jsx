@@ -4,7 +4,6 @@ import Carousel, { Modal, ModalGateway } from "react-images"
 
 import SelectedImage from "./SelectedImage"
 import { SampleImages } from "../SampleImages"
-import { Container } from "@mui/material"
 
 const photos = [
   {
