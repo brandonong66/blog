@@ -1,6 +1,7 @@
 import React from "react"
 import { SampleImages } from "../GalleryPage/SampleImages"
 import { Box, Typography, Container, Link } from "@mui/material"
+import { textAlign } from "@mui/system"
 function AboutPage() {
   return (
     <Container
@@ -42,14 +43,15 @@ function AboutPage() {
           >
             About Me
           </Typography>
-          <Typography variant="h7">
+          <Typography variant="body1" align="justify">
             Hi, I'm Brandon Ong, a 21 year old from the Bay Area with a passion
             for cars. I got into cars when I was 15 by discovering car videos on
             youtube, specifically E30 related videos. Ever since then, I've been
             in love with BMWs and my dream is to own an M3 collection one day. I
             enjoy working on cars because taking things apart and learning how
             different mechanisms and designs work really fascinates me.
-            Everything I know about cars I learned from the internet, everything
+            Everything I know about cars I learned from the internet, from
+            replacing parts to the physics of engine internals.
             <br />
             <br />
             Cars are just a hobby for me, something to do on the side. I'm

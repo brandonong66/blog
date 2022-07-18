@@ -12,7 +12,7 @@ import { styled, ThemeProvider, createTheme } from "@mui/material/styles"
 
 function HomePage() {
   return (
-    <Container>
+    <Container sx={{ pt: "1rem" }}>
       <Grid container rowSpacing={1} maxHeight={{ xs: "25%" }}>
         <Grid item xs={12}>
           <PostCard />
@@ -41,7 +41,6 @@ function HomePage() {
         <Grid item xs={12}>
           <PostCard />
         </Grid>
-        
       </Grid>
     </Container>
   )

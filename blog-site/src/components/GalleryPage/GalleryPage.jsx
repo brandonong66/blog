@@ -3,7 +3,9 @@ import React from "react"
 import ImageGrid from "./ImageGrid/"
 function GalleryPage() {
   return (
-    <Container>
+    <Container sx={{
+      pt: "1rem"
+    }}>
       <ImageGrid />
     </Container>
   )
