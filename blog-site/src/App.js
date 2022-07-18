@@ -1,6 +1,7 @@
 import React from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { Container, Box } from "@mui/material"
+import { SmoothProvider } from 'react-smooth-scrolling'
 
 import "./App.css"
 import "@fontsource/roboto/300.css"
@@ -43,7 +44,8 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <ThemeProvider theme={darkTheme}>
+      <SmoothProvider skew={true} >
+        {/* <ThemeProvider theme={darkTheme}> */}
           <CssBaseline />
           <Box
             sx={{
@@ -60,7 +62,8 @@ function App() {
               <Route path="/" element={<HomePage />} />
             </Routes>
           </Box>
-        </ThemeProvider>
+        {/* </ThemeProvider> */}
+        </SmoothProvider>
       </BrowserRouter>
     </div>
   )

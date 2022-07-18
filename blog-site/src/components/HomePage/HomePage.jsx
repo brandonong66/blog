@@ -20,6 +20,28 @@ function HomePage() {
         <Grid item xs={12}>
           <PostCard />
         </Grid>
+        <Grid item xs={12}>
+          <PostCard />
+        </Grid>
+        <Grid item xs={12}>
+          <PostCard />
+        </Grid>
+        <Grid item xs={12}>
+          <PostCard />
+        </Grid>
+        <Grid item xs={12}>
+          <PostCard />
+        </Grid>
+        <Grid item xs={12}>
+          <PostCard />
+        </Grid>
+        <Grid item xs={12}>
+          <PostCard />
+        </Grid>
+        <Grid item xs={12}>
+          <PostCard />
+        </Grid>
+        
       </Grid>
     </Container>
   )

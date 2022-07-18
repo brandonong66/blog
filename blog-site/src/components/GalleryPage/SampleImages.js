@@ -6,6 +6,8 @@ import pic5 from "../../assets/E90-1-0.jpg"
 import pic6 from "../../assets/IMG_2374 edit.jpg"
 import pic7 from "../../assets/IMG_3138.JPG"
 import pic8 from "../../assets/IMG_6156-preview.JPG"
+import pic9 from "../../assets/All-0-1.jpg"
+import pic10 from "../../assets/E36Crash-1.JPG"
 
 export const SampleImages = [
     pic1,
@@ -15,5 +17,7 @@ export const SampleImages = [
     pic5,
     pic6,
     pic7,
-    pic8
+    pic8,
+    pic9,
+    pic10
 ]
