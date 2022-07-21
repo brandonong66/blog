@@ -25,6 +25,17 @@ recordRoutes.route("/posts").get(function (req, res) {
 recordRoutes.route("/test").get(function (req, res) {
     res.send("WORKING")
 })
+
+recordRoutes.route("/users").get(function (req, res) {
+    let db_connect= dbo.getDb("blog-database")
+    db_connect
+    .collection("users")
+    .find({})
+    .toArray(function (err, result) {
+        if (err) throw err
+        res.json(result)
+    })
+})
 // // This section will help you get a list of all the records.
 // recordRoutes.route("/record").get(function (req, res) {
 //   let db_connect = dbo.getDb("employees")
