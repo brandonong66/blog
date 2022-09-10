@@ -115,7 +115,14 @@ function SwapPage() {
                 <li>1997-1998 E36/7: Z3 2.8</li>
             </ul>
           </li>
-          <li>M52TUB28 (double vanos): </li>
+          <li>M52TUB28 (double vanos)
+            <ul>
+                <li>1998-2000 E46: 328i, 328Ci</li>
+                <li>1998-2000 E36/7/8: Z3 2.8</li>
+                <li>1998-2000 E39: 528i</li>
+                <li>1998-2000 E38 72</li>
+            </ul>
+          </li>
           <li>M54B25</li>
           <li>M54B28</li>
           <li>M54B30</li>
