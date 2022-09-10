@@ -14,6 +14,7 @@ import Navbar from "./components/Navbar"
 import AboutPage from "./components/AboutPage"
 import GalleryPage from "./components/GalleryPage"
 import HomePage from "./components/HomePage"
+import SwapPage from "./components/SwapPage"
 
 import { ThemeProvider, createTheme } from "@mui/material/styles"
 import CssBaseline from "@mui/material/CssBaseline"
@@ -57,6 +58,7 @@ function App() {
             </Container>
             {/* <LandingPage imageSrc={LandingPageImage} /> */}
             <Routes>
+            <Route path="/24v-swap" element={<SwapPage />} />
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/" element={<HomePage />} />
