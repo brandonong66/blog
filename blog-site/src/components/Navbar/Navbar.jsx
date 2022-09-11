@@ -9,17 +9,19 @@ function Navbar() {
         <Grid container xs={4}>
           <Grid item>
             <Box>
+            <Link href="/" underline="none" color="inherit">
               <Typography variant="h6" noWrap={true} color="text.primary">
                 Brandon's Bimmers
               </Typography>
+              </Link>
             </Box>
           </Grid>
         </Grid>
         <Grid container spacing={2} justifyContent="flex-end" xs={8}>
           <Grid item>
-            <Link href="/" underline="none" color="inherit">
+            <Link href="/24v-swap" underline="none" color="inherit">
               <Typography variant="h6" color="text.primary">
-                Home
+                24V Swap
               </Typography>
             </Link>
           </Grid>
