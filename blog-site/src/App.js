@@ -45,7 +45,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-      <SmoothProvider skew={true} >
+      {/* <SmoothProvider skew={false} > */}
         {/* <ThemeProvider theme={darkTheme}> */}
           <CssBaseline />
           <Box
@@ -65,7 +65,7 @@ function App() {
             </Routes>
           </Box>
         {/* </ThemeProvider> */}
-        </SmoothProvider>
+        {/* </SmoothProvider> */}
       </BrowserRouter>
     </div>
   )
