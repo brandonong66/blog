@@ -72,7 +72,7 @@ function SwapPage() {
         </li>
       </ol>
       <Engine />
-      <Transmission />
+      <Transmission/>
       <Differential />
       <CoolingSystem />
       <Gearshift />

@@ -8,10 +8,12 @@ import {
   TableHead,
   TableRow,
   TableCell,
+  Box,
 } from "@mui/material"
+
 function Transmission() {
   return (
-    <div>
+    <Box sx={{ marginTop: "30px" }}>
       <Typography variant="h4" id="Transmission">
         Transmission
       </Typography>
@@ -57,30 +59,30 @@ function Transmission() {
                 <TableCell>Definition</TableCell>
                 <TableCell>Options</TableCell>
               </TableRow>
-              <TableRow>
-                <TableCell>S</TableCell>
-                <TableCell>Transmission Type</TableCell>
-                <TableCell>S=Manual, A=Auto</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>5</TableCell>
-                <TableCell>Number of forward gears</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>D</TableCell>
-                <TableCell>Type of top gear</TableCell>
-                <TableCell>D=Direct, S=Overdrive</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>310</TableCell>
-                <TableCell>Max input torque (Nm)</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>Z</TableCell>
-                <TableCell>Manufacturer</TableCell>
-                <TableCell>Z=ZF, G=Getrag, R=GM</TableCell>
-              </TableRow>
             </TableHead>
+            <TableRow>
+              <TableCell>S</TableCell>
+              <TableCell>Transmission Type</TableCell>
+              <TableCell>S=Manual, A=Auto</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>5</TableCell>
+              <TableCell>Number of forward gears</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>D</TableCell>
+              <TableCell>Type of top gear</TableCell>
+              <TableCell>D=Direct, S=Overdrive</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>310</TableCell>
+              <TableCell>Max input torque (Nm)</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Z</TableCell>
+              <TableCell>Manufacturer</TableCell>
+              <TableCell>Z=ZF, G=Getrag, R=GM</TableCell>
+            </TableRow>
           </Table>
         </TableContainer>
         <ul>
@@ -236,7 +238,7 @@ function Transmission() {
         solid aluminum mounts but this will increase vibration. I chose the
         stock ones for more comfort.
       </Typography>
-    </div>
+    </Box>
   )
 }
 
