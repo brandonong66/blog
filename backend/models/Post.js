@@ -1,8 +1,11 @@
 const mongoose = require("mongoose")
 
 const postSchema = new mongoose.Schema({
-  title: String,
-  body: String,
+  //id: Number, add post data obj into posts collection
+  id: { type: Number, required: true },
+  title: { type: String, required: true },
+  body: { type: String, required: true },
+  author: { type: String, default: "brandonong66"},
   createdDate: {
     type: Date,
     default: () => Date.now(),
@@ -11,7 +14,11 @@ const postSchema = new mongoose.Schema({
     type: Date,
     default: () => Date.now(),
   },
-  tags: [String],
+  tags: { type: [String], required: true },
+  archived: {
+    type: Boolean,
+    default: false,
+  },
 })
 
 postSchema.pre("save", function (next) {
