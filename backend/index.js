@@ -1,29 +1,25 @@
-const express = require("express")
-const app = express()
-const mongoose = require("mongoose")
 require("dotenv").config()
-const postsRoute = require('./routes/posts')
+const express = require("express")
+const mongoose = require("mongoose")
+const routes = require("./routes")
+const cors = require("cors")
+const bodyParser = require("body-parser")
 
-const PORT = process.env.PORT || 5001
-
-//middlewares
-app.use(express.json())
-app.use(express.urlencoded({extended:true}))
-
-//routess
-app.use('/posts',postsRoute)
-
-
-//connect to mongodb atlas
+// Connect to MongoDB database
 mongoose
-  .connect(process.env.MONGO_URI, { useNewUrlParser: true })
+  .connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    dbName: "blog-database",
+  })
   .then(() => {
-    console.log("Connected to mongodb atlas")
-  })
-  .catch((error) => {
-    console.log("Error connecting to mongodb atlas")
-  })
+    const app = express()
+    app.use(express.json())
+    app.use(cors())
+    app.use("", routes)
+    app.use(bodyParser.json())
+    app.use(bodyParser.urlencoded({ extended: true }))
 
-app.listen(PORT, () => {
-  console.log("Server started at PORT ", PORT)
-})
+    app.listen(process.env.PORT, () => {
+      console.log(`Server has started at port ${process.env.PORT}`)
+    })
+  })
