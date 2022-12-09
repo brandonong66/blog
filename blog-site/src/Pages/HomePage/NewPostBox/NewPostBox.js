@@ -32,7 +32,6 @@ function NewPostBox() {
   }
 
   const handleSubmit = (e) => {
-    console.log("test")
     e.preventDefault()
     const postData = {
       title: newPostData.title,

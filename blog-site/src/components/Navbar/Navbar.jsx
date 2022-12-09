@@ -4,31 +4,40 @@ import React from "react"
 
 function Navbar() {
   return (
-    <div className="navbar">
+    <div className="navbar" sx={{ display: "flex" }}>
       <Grid container sx={{ py: 2 }}>
-        <Grid item>
-            <Link href="/" underline="none" color="inherit">
-              <Typography variant="h6" noWrap={true} color="text.primary">
-                Brandon's Bimmers
-              </Typography>
-            </Link>
+        <Grid item lg={8} md={8} sm={6} xs={6}>
+          <Link href="/" underline="none" color="inherit">
+            <Typography variant="h6" color="text.primary">
+              Brandon's Bimmers
+            </Typography>
+          </Link>
         </Grid>
-        <Grid container spacing={2} alignItems="flex-start" justifyContent="flex-end">
-          <Grid item>
+
+        <Grid
+          item
+          lg={4}
+          md={4}
+          sm={6}
+          xs={6}
+          sx={{ display: "flex", justifyContent: "end" }}
+        >
+          <Grid>
             <Link href="/24v-swap" underline="none" color="inherit">
               <Typography variant="h6" color="text.primary">
                 24V Swap
               </Typography>
             </Link>
           </Grid>
-          <Grid item>
+
+          <Grid sx={{ marginX: "1rem" }}>
             <Link href="/gallery" underline="none" color="inherit">
               <Typography variant="h6" color="text.primary">
                 Gallery
               </Typography>
             </Link>
           </Grid>
-          <Grid item>
+          <Grid>
             <Link href="/about" underline="none" color="inherit">
               <Typography variant="h6" color="text.primary">
                 About

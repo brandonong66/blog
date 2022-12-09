@@ -1,7 +1,6 @@
-import React from "react"
+import React, { createContext } from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { Container, Box } from "@mui/material"
-import { SmoothProvider } from 'react-smooth-scrolling'
 
 import "./App.css"
 import "@fontsource/roboto/300.css"
@@ -9,15 +8,16 @@ import "@fontsource/roboto/400.css"
 import "@fontsource/roboto/500.css"
 import "@fontsource/roboto/700.css"
 
-import Navbar from "./components/Navbar"
-
-import AboutPage from "./components/AboutPage"
-import GalleryPage from "./components/GalleryPage"
-import HomePage from "./components/HomePage"
-import SwapPage from "./components/SwapPage"
+import Navbar from "./components/Navbar/Navbar"
+import AboutPage from "./Pages/AboutPage"
+import GalleryPage from "./Pages/GalleryPage/GalleryPage"
+import HomePage from "./Pages/HomePage/HomePage"
+import SwapPage from "./Pages/SwapPage"
 
 import { ThemeProvider, createTheme } from "@mui/material/styles"
 import CssBaseline from "@mui/material/CssBaseline"
+import PostPage from "./Pages/PostPage"
+import { SmoothProvider } from "react-smooth-scrolling"
 const darkTheme = createTheme({
   palette: {
     type: "dark",
@@ -39,34 +39,37 @@ const darkTheme = createTheme({
   },
 })
 
-
-
+export const ApiContext = createContext()
 function App() {
+  const apiHost = process.env.REACT_APP_API_HOST
   return (
     <div>
-      <BrowserRouter>
-      {/* <SmoothProvider skew={false} > */}
-        {/* <ThemeProvider theme={darkTheme}> */}
-          <CssBaseline />
-          <Box
-            sx={{
-              bgcolor: "background.default",
-            }}
-          >
-            <Container>
-              <Navbar />
-            </Container>
-            {/* <LandingPage imageSrc={LandingPageImage} /> */}
-            <Routes>
-            <Route path="/24v-swap" element={<SwapPage />} />
-              <Route path="/gallery" element={<GalleryPage />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/" element={<HomePage />} />
-            </Routes>
-          </Box>
-        {/* </ThemeProvider> */}
-        {/* </SmoothProvider> */}
-      </BrowserRouter>
+      <ApiContext.Provider value={apiHost}>
+        <BrowserRouter>
+          <SmoothProvider skew={false}>
+            {/* <ThemeProvider theme={darkTheme}> */}
+            <CssBaseline />
+            <Box
+              sx={{
+                bgcolor: "background.default",
+              }}
+            >
+              <Container>
+                <Navbar />
+              </Container>
+              {/* <LandingPage imageSrc={LandingPageImage} /> */}
+              <Routes>
+                <Route path="/post" element={<PostPage />} />
+                <Route path="/24v-swap" element={<SwapPage />} />
+                <Route path="/gallery" element={<GalleryPage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/" element={<HomePage />} />
+              </Routes>
+            </Box>
+            {/* </ThemeProvider> */}
+          </SmoothProvider>
+        </BrowserRouter>
+      </ApiContext.Provider>
     </div>
   )
 }

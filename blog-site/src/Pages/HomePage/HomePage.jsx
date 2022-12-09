@@ -29,7 +29,7 @@ function HomePage() {
   const [isLoading, setLoading] = useState(true)
   const [page, setPage] = useState(1)
   const [postCount, setPostCount] = useState(0)
-  
+
   useEffect(() => {
     axios.get("http://localhost:5001/posts/").then((response) => {
       setPosts(response.data)
@@ -39,7 +39,6 @@ function HomePage() {
       setPostCount(response.data.count)
     })
   }, [])
-
 
   return (
     <div>
@@ -52,7 +51,7 @@ function HomePage() {
           {posts
             .slice((page - 1) * POSTSPERPAGE, page * POSTSPERPAGE)
             .map((post) => (
-              <PostCard title={post.title} body={post.body} key={post._id} />
+              <PostCard title={post.title} body={post.body} key={post._id} post={post} />
             ))}
           <Box sx={{ display: "flex", justifyContent: "center" }}>
             {POSTSPERPAGE < postCount && postCount <= 3 * POSTSPERPAGE && (
@@ -140,7 +139,6 @@ function HomePage() {
                 <Button
                   onClick={() => {
                     setPage(Math.ceil(postCount / POSTSPERPAGE))
-                    
                   }}
                 >
                   &gt;&gt;
