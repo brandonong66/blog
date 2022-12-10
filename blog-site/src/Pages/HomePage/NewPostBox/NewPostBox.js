@@ -1,9 +1,12 @@
 import { Button, FormControl, TextField, Box, Grid } from "@mui/material"
 import { flexbox } from "@mui/system"
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import axios from "axios"
+import { ApiContext } from "../../../App"
 
 function NewPostBox() {
+  const ApiHost = useContext(ApiContext)
+
   const [newPost, setNewPost] = useState(false)
   const [newPostData, setNewPostData] = useState({
     title: "",
@@ -31,21 +34,21 @@ function NewPostBox() {
     })
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  const handleSubmit = (event) => {
+    event.preventDefault()
     const postData = {
       title: newPostData.title,
       body: newPostData.body,
       tags: newPostData.tags.split(" "),
     }
-    console.log(JSON.stringify(postData))
-    axios.post("http://localhost:5001/posts/", postData).then((response) => {
+    axios.post(ApiHost + "/posts/", postData).then((response) => {
       console.log(response.status)
       setNewPostData({
         title: "",
         body: "",
         tags: "",
       })
+      window.location.reload(false)
     })
   }
 
@@ -55,8 +58,8 @@ function NewPostBox() {
         <div
           style={{
             display: "flex",
-            paddingTop: "1rem",
-            paddingBottom: "1rem",
+            marginTop: "0.5em",
+            parginBottom: "0.5em",
             justifyContent: "right",
           }}
         >

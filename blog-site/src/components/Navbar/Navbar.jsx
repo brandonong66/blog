@@ -29,14 +29,24 @@ function Navbar() {
               </Typography>
             </Link>
           </Grid>
+          {/* <Divider
+            orientation="vertical"
+            variant="middle"
+            sx={{ marginX: "1rem" }}
+          /> */}
 
-          <Grid sx={{ marginX: "1rem" }}>
+          <Grid sx={{ marginX: "2em" }}>
             <Link href="/gallery" underline="none" color="inherit">
               <Typography variant="h6" color="text.primary">
                 Gallery
               </Typography>
             </Link>
           </Grid>
+          {/* <Divider
+            orientation="vertical"
+            variant="middle"
+            sx={{ marginX: "1rem" }}
+          /> */}
           <Grid>
             <Link href="/about" underline="none" color="inherit">
               <Typography variant="h6" color="text.primary">
@@ -46,7 +56,7 @@ function Navbar() {
           </Grid>
         </Grid>
       </Grid>
-      <Divider></Divider>
+      <Divider sx={{ borderColor: "black" }} />
     </div>
   )
 }
