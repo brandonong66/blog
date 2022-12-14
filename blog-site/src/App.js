@@ -16,7 +16,7 @@ import SwapPage from "./Pages/SwapPage"
 
 import { ThemeProvider, createTheme } from "@mui/material/styles"
 import CssBaseline from "@mui/material/CssBaseline"
-import PostPage from "./Pages/PostPage"
+import PostPage from "./Pages/PostPage/PostPage"
 import { SmoothProvider } from "react-smooth-scrolling"
 const darkTheme = createTheme({
   palette: {

@@ -12,6 +12,7 @@
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.1.3",
+    "buffer": "^6.0.3",
     "nodemon": "^2.0.20",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
@@ -24,6 +25,7 @@
     "react-slick": "^0.29.0",
     "react-smooth-scrolling": "^1.0.2",
     "react-spinners": "^0.13.6",
+    "sanitize-html": "^2.8.0",
     "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
   },

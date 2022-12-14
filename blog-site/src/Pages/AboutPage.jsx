@@ -1,7 +1,7 @@
 import React from "react"
 import { SampleImages } from "./GalleryPage/SampleImages"
 import { Box, Typography, Container, Link } from "@mui/material"
-import { textAlign } from "@mui/system"
+
 function AboutPage() {
   return (
     <Container

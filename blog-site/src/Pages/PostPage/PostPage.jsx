@@ -10,7 +10,10 @@ import {
   Typography,
 } from "@mui/material"
 import axios from "axios"
-import { ApiContext } from "../App"
+import { ApiContext } from "../../App"
+import ReactHtmlParser from "react-html-parser"
+import "./PostPage.css"
+const sanitizeHtml = require("sanitize-html")
 
 function PostPage() {
   const [searchParams, setSearchParams] = useSearchParams()
@@ -87,9 +90,9 @@ function PostPage() {
                     label="content"
                     variant="outlined"
                     multiline
-                    rows="5"
+                    minRows="5"
                     fullWidth
-                    sx={{ my: "0.5rem" }}
+                    sx={{ my: "0.5rem", resize: "vertical" }}
                     value={post.body}
                     onChange={handleChange}
                     required
@@ -146,7 +149,16 @@ function PostPage() {
             Updated: {formatDate(post.modifiedDate)}
           </Typography>
           <br />
-          <Typography variant="body">{post.body}</Typography>
+          <Typography
+            variant="body"
+            sx={{
+              whiteSpace: "pre-line"
+            }}
+          >
+            {ReactHtmlParser(
+              sanitizeHtml(post.body, { allowedTags: ["li", "ol", "img"] })
+            )}
+          </Typography>
         </div>
       )}
     </Container>
