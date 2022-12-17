@@ -1,8 +1,8 @@
-
 const express = require("express")
 const router = express.Router()
 const Post = require("../models/Post")
 const cors = require("cors")
+const sanitizeHtml = require("sanitize-html")
 
 const corsOptions = {
   origin: "http://localhost:3000",
@@ -32,12 +32,13 @@ router
     }
   })
   .post(async (req, res) => {
+
     try {
       const count = await Post.countDocuments()
       const post = new Post({
         id: count + 1,
         title: req.body.title,
-        body: req.body.body,
+        body: sanitizeHtml(req.body.body),
         tags: req.body.tags,
       })
       await post.save()
