@@ -1,9 +1,9 @@
 import { Container, Button, ButtonGroup, Box } from "@mui/material"
 import React, { useState, useEffect } from "react"
-import PostCard from "./PostCard/PostCard"
+import PostCard from "./PostCard"
 import axios from "axios"
 import { SyncLoader } from "react-spinners"
-import NewPostBox from "./NewPostBox/NewPostBox"
+import NewPostBox from "./NewPostBox"
 const POSTSPERPAGE = 4
 
 const pageButtonCalculator = (currentPage, postCount) => {
@@ -51,7 +51,12 @@ function HomePage() {
           {posts
             .slice((page - 1) * POSTSPERPAGE, page * POSTSPERPAGE)
             .map((post) => (
-              <PostCard title={post.title} body={post.body} key={post._id} post={post} />
+              <PostCard
+                title={post.title}
+                body={post.body.slice(0, 50)}
+                key={post._id}
+                post={post}
+              />
             ))}
           <Box sx={{ display: "flex", justifyContent: "center" }}>
             {POSTSPERPAGE < postCount && postCount <= 3 * POSTSPERPAGE && (

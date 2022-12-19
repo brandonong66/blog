@@ -5,7 +5,8 @@ const postSchema = new mongoose.Schema({
   id: { type: Number, required: true },
   title: { type: String, required: true },
   body: { type: String, required: true },
-  author: { type: String, default: "brandonong66"},
+  image: { type: String, default: "" },
+  author: { type: String, default: "brandonong66" },
   createdDate: {
     type: Date,
     default: () => Date.now(),

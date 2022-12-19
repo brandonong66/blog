@@ -2,7 +2,7 @@ import { Button, FormControl, TextField, Box, Grid } from "@mui/material"
 import { flexbox } from "@mui/system"
 import React, { useState, useEffect, useContext } from "react"
 import axios from "axios"
-import { ApiContext } from "../../../App"
+import { ApiContext } from "../../App"
 
 function NewPostBox() {
   const ApiHost = useContext(ApiContext)
@@ -12,6 +12,7 @@ function NewPostBox() {
     title: "",
     body: "",
     tags: "",
+    image: "",
   })
   const [validForm, setValidForm] = useState(false)
 
@@ -32,6 +33,7 @@ function NewPostBox() {
       ...newPostData,
       [event.target.name]: event.target.value,
     })
+    console.log(newPostData)
   }
 
   const handleSubmit = (event) => {
@@ -40,15 +42,17 @@ function NewPostBox() {
       title: newPostData.title,
       body: newPostData.body,
       tags: newPostData.tags.split(" "),
+      image: newPostData.image,
     }
     axios.post(ApiHost + "/posts/", postData).then((response) => {
-      console.log(response.status)
+      console.log(response.data)
       setNewPostData({
         title: "",
         body: "",
         tags: "",
+        image:"",
       })
-      window.location.reload(false)
+      // window.location.reload(false)
     })
   }
 
@@ -107,6 +111,15 @@ function NewPostBox() {
                   value={newPostData.tags}
                   onChange={handleChange}
                   required
+                />
+
+                <TextField
+                  name="image"
+                  label="image"
+                  variant="outlined"
+                  placeholder="https://i.imgur.com/asdf1234.jpeg"
+                  value={newPostData.image}
+                  onChange={handleChange}
                 />
                 <Box sx={{ display: "flex", justifyContent: "right" }}>
                   <Button variant="outlined" onClick={() => setNewPost(false)}>

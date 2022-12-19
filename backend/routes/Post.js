@@ -32,7 +32,6 @@ router
     }
   })
   .post(async (req, res) => {
-
     try {
       const count = await Post.countDocuments()
       const post = new Post({
@@ -40,6 +39,7 @@ router
         title: req.body.title,
         body: sanitizeHtml(req.body.body),
         tags: req.body.tags,
+        image: req.body.image,
       })
       await post.save()
       res.send(post)
@@ -82,13 +82,13 @@ router
   })
   .put(async (req, res) => {
     if (
-      !(req.body.title || req.body.body || req.body.tags || req.body.archived)
+      !(req.body.title || req.body.body || req.body.tags || req.body.archived ||req.body.image)
     ) {
       res.status(400)
       res.send("Error: no change specified")
     } else {
       try {
-        const post = await Post.findOne({ id: req.params.id })
+        let post = await Post.findOne({ id: req.params.id })
         if (req.body.title) {
           post.title = req.body.title
         }
@@ -100,6 +100,9 @@ router
         }
         if (req.body.archived) {
           post.archived = req.body.archived
+        }
+        if (req.body.image) {
+          post.image = req.body.image
         }
 
         await post.save()
