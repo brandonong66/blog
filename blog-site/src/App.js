@@ -17,7 +17,6 @@ import SwapPage from "./Pages/SwapPage"
 import { ThemeProvider, createTheme } from "@mui/material/styles"
 import CssBaseline from "@mui/material/CssBaseline"
 import PostPage from "./Pages/PostPage/PostPage"
-import { SmoothProvider } from "react-smooth-scrolling"
 const darkTheme = createTheme({
   palette: {
     type: "dark",
@@ -46,28 +45,26 @@ function App() {
     <div>
       <ApiContext.Provider value={apiHost}>
         <BrowserRouter>
-          <SmoothProvider skew={false}>
-            {/* <ThemeProvider theme={darkTheme}> */}
-            <CssBaseline />
-            <Box
-              sx={{
-                bgcolor: "background.default",
-              }}
-            >
-              <Container>
-                <Navbar />
-              </Container>
-              {/* <LandingPage imageSrc={LandingPageImage} /> */}
-              <Routes>
-                <Route path="/post" element={<PostPage />} />
-                <Route path="/24v-swap" element={<SwapPage />} />
-                <Route path="/gallery" element={<GalleryPage />} />
-                <Route path="/about" element={<AboutPage />} />
-                <Route path="/" element={<HomePage />} />
-              </Routes>
-            </Box>
-            {/* </ThemeProvider> */}
-          </SmoothProvider>
+          {/* <ThemeProvider theme={darkTheme}> */}
+          <CssBaseline />
+          <Box
+            sx={{
+              bgcolor: "background.default",
+            }}
+          >
+            <Container>
+              <Navbar />
+            </Container>
+            {/* <LandingPage imageSrc={LandingPageImage} /> */}
+            <Routes>
+              <Route path="/post" element={<PostPage />} />
+              <Route path="/24v-swap" element={<SwapPage />} />
+              <Route path="/gallery" element={<GalleryPage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/" element={<HomePage />} />
+            </Routes>
+          </Box>
+          {/* </ThemeProvider> */}
         </BrowserRouter>
       </ApiContext.Provider>
     </div>

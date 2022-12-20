@@ -23,7 +23,6 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "react-slick": "^0.29.0",
-    "react-smooth-scrolling": "^1.0.2",
     "react-spinners": "^0.13.6",
     "sanitize-html": "^2.8.0",
     "slick-carousel": "^1.8.1",

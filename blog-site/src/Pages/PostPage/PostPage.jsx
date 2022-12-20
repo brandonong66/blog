@@ -75,9 +75,8 @@ function PostPage() {
   return (
     <ThemeProvider theme={theme}>
       <Container>
-        {" "}
         {editPost && post && (
-          <div>
+          <Container>
             <Box
               sx={{
                 mt: "1rem",
@@ -103,7 +102,7 @@ function PostPage() {
                       label="content"
                       variant="outlined"
                       multiline
-                      minRows="5"
+                      rows="20"
                       fullWidth
                       sx={{ my: "0.5rem", resize: "vertical" }}
                       value={post.body}
@@ -148,7 +147,7 @@ function PostPage() {
                 </Grid>
               </Grid>
             </Box>
-          </div>
+          </Container>
         )}
         {!editPost && (
           <Button
@@ -172,9 +171,11 @@ function PostPage() {
             <br />
             <Typography
               variant="body"
-              sx={{
-                whiteSpace: "pre-line",
-              }}
+              sx={
+                {
+                  // whiteSpace: "pre-line",
+                }
+              }
             >
               {ReactHtmlParser(
                 sanitizeHtml(post.body, {
@@ -183,6 +184,7 @@ function PostPage() {
                   ]),
                 })
               )}
+              {/* {post.body} */}
             </Typography>
           </div>
         )}
