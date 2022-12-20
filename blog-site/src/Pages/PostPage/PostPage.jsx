@@ -70,7 +70,7 @@ function PostPage() {
     const date = new Date(dateStr)
     const month = months[date.getMonth()]
 
-    return month + " " + date.getDay() + ", " + date.getFullYear()
+    return month + " " + date.getDate() + ", " + date.getFullYear()
   }
   return (
     <ThemeProvider theme={theme}>
@@ -124,6 +124,7 @@ function PostPage() {
                       name="image"
                       label="image"
                       variant="outlined"
+                      placeholder="https://i.imgur.com/asdf1234.jpeg"
                       value={post.image}
                       onChange={handleChange}
                     />
@@ -176,7 +177,11 @@ function PostPage() {
               }}
             >
               {ReactHtmlParser(
-                sanitizeHtml(post.body, { allowedTags: ["li", "ol", "img"] })
+                sanitizeHtml(post.body, {
+                  allowedTags: sanitizeHtml.defaults.allowedTags.concat([
+                    "img",
+                  ]),
+                })
               )}
             </Typography>
           </div>

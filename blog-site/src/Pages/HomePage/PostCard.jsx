@@ -5,6 +5,7 @@ import {
   CardActionArea,
   CardContent,
   CardMedia,
+  Grid,
   Typography,
 } from "@mui/material"
 // import { sizing } from "@mui/system"
@@ -18,44 +19,48 @@ function PostCard({ post }) {
         // transition: "transform 0.2s ease-in-out",
         "&:hover": { backgroundImage: `url("${post.image}")` },
         borderRadius: "0",
-        // my: "1rem",
         borderBottom: "1px solid grey",
-
         backgroundSize: "cover",
         backgroundPosition: "center",
+        // height: "200px",
       }}
     >
-      {" "}
       <CardActionArea href={"/post?id=" + post.id}>
-        <Box
+        <Grid
+          container
           sx={{
-            display: "flex",
-            flexDirection: "row",
             backdropFilter: "blur(8px)",
             backgroundColor: "rgba(255,255,255,0.80)",
+
+            padding: "0.5em",
           }}
         >
-          {post.image && post.image != "" && (
-            <Box
-              component="img"
-              src={post.image}
-              alt={post.image}
-              sx={{
-                width: "20%",
-                objectFit: "cover",
-                height: "150px",
-                padding: "0.5em",
-              }}
-            />
-          )}
-
-          <CardContent>
-            <Typography variant="h5">{post.title}</Typography>
-            <Typography variant="body2">
-              {post.body.slice(0, 500) + "..."}
-            </Typography>
-          </CardContent>
-        </Box>
+          {/* {post.image && post.image != "" && (
+            <Grid item lg={2} md={2} sm={2} xs={2}>
+              <img
+                src={post.image}
+                alt={post.image}
+                style={{
+                  width: "100%",
+                  minHeight: "100%",
+                  objectFit: "cover",
+                  overflow: "hidden",
+                }}
+              />
+            </Grid>
+          )} */}
+          <Grid
+            item
+            // lg={10} md={10} sm={10} xs={10}
+          >
+            <CardContent>
+              <Typography variant="h5">{post.title}</Typography>
+              <Typography variant="body2">
+                {post.body.slice(0, 500) + "..."}
+              </Typography>
+            </CardContent>
+          </Grid>
+        </Grid>
       </CardActionArea>
     </Card>
   )
