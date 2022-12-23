@@ -50,9 +50,9 @@ function NewPostBox() {
         title: "",
         body: "",
         tags: "",
-        image:"",
+        image: "",
       })
-      // window.location.reload(false)
+      window.location.reload(false)
     })
   }
 

@@ -173,7 +173,7 @@ function PostPage() {
               variant="body"
               sx={
                 {
-                  // whiteSpace: "pre-line",
+                  whiteSpace: "pre-line",
                 }
               }
             >
