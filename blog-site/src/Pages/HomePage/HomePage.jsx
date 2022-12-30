@@ -3,8 +3,10 @@ import React, { useState, useEffect } from "react"
 import PostCard from "./PostCard"
 import axios from "axios"
 import { SyncLoader } from "react-spinners"
+import { ApiContext } from "../../App"
 import NewPostBox from "./NewPostBox"
 const POSTSPERPAGE = 4
+
 
 const pageButtonCalculator = (currentPage, postCount) => {
   const pageNumbers = []
@@ -25,17 +27,18 @@ const pageButtonCalculator = (currentPage, postCount) => {
 }
 
 function HomePage() {
+  const ApiHost = useContext(ApiContext)
   const [posts, setPosts] = useState([])
   const [isLoading, setLoading] = useState(true)
   const [page, setPage] = useState(1)
   const [postCount, setPostCount] = useState(0)
 
   useEffect(() => {
-    axios.get("http://localhost:5001/posts/").then((response) => {
+    axios.get(ApiHost+"/posts/").then((response) => {
       setPosts(response.data)
       setLoading(false)
     })
-    axios.get("http://localhost:5001/posts/count").then((response) => {
+    axios.get(ApiHost+"/posts/count").then((response) => {
       setPostCount(response.data.count)
     })
   }, [])
