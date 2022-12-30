@@ -28,7 +28,7 @@ const pageButtonCalculator = (currentPage, postCount) => {
 
 function HomePage() {
   const ApiHost = useContext(ApiContext)
-  const [posts, setPosts] = useState([])
+  const [posts, setPosts] = useState()
   const [isLoading, setLoading] = useState(true)
   const [page, setPage] = useState(1)
   const [postCount, setPostCount] = useState(0)
@@ -48,7 +48,7 @@ function HomePage() {
       {isLoading && (
         <SyncLoader style={{ position: "absolute", top: "50%", left: "50%" }} />
       )}
-      {!isLoading && (
+      {!isLoading && posts && (
         <Container sx={{ pb: "2rem" }}>
           {/* <NewPostBox /> */}
           {posts
