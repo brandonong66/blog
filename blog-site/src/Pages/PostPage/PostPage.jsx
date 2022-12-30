@@ -149,7 +149,7 @@ function PostPage() {
             </Box>
           </Container>
         )}
-        {!editPost && (
+        {/* {!editPost && (
           <Button
             variant="outlined"
             sx={{ marginTop: "0.5em" }}
@@ -157,7 +157,7 @@ function PostPage() {
           >
             Edit
           </Button>
-        )}
+        )} */}
         {post && (
           <div>
             <Typography variant="h2">{post.title}</Typography>

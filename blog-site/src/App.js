@@ -13,6 +13,7 @@ import AboutPage from "./Pages/AboutPage"
 import GalleryPage from "./Pages/GalleryPage/GalleryPage"
 import HomePage from "./Pages/HomePage/HomePage"
 import SwapPage from "./Pages/SwapPage"
+import LoginPage from "./Pages/LoginPage"
 
 import { ThemeProvider, createTheme } from "@mui/material/styles"
 import CssBaseline from "@mui/material/CssBaseline"
@@ -61,6 +62,7 @@ function App() {
               <Route path="/24v-swap" element={<SwapPage />} />
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/about" element={<AboutPage />} />
+              <Route path="/login" element={<LoginPage />} />
               <Route path="/" element={<HomePage />} />
             </Routes>
           </Box>

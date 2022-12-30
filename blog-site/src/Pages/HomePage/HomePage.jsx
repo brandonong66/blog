@@ -47,7 +47,7 @@ function HomePage() {
       )}
       {!isLoading && (
         <Container sx={{ pb: "2rem" }}>
-          <NewPostBox />
+          {/* <NewPostBox /> */}
           {posts
             .slice((page - 1) * POSTSPERPAGE, page * POSTSPERPAGE)
             .map((post) => (
