@@ -36,6 +36,8 @@ function HomePage() {
   useEffect(() => {
     axios.get(ApiHost+"/posts/").then((response) => {
       setPosts(response.data)
+      console.log(ApiHost)
+      console.log(response.data)
       setLoading(false)
     })
     axios.get(ApiHost+"/posts/count").then((response) => {
