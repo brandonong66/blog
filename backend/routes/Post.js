@@ -50,7 +50,7 @@ router
   })
 
 //get the number of posts
-router.get("/count", cors(corsOptions), async (req, res) => {
+router.get("/count", async (req, res) => {
   if (req.query.all == "true") {
     try {
       const count = await Post.countDocuments()
