@@ -27,6 +27,7 @@ const pageButtonCalculator = (currentPage, postCount) => {
 }
 
 function HomePage() {
+  //test
   const ApiHost = useContext(ApiContext)
   const [posts, setPosts] = useState()
   const [isLoading, setLoading] = useState(true)
