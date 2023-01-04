@@ -1,6 +1,14 @@
 const mongoose = require("mongoose")
 
 const userSchema = new mongoose.Schema({
+  email: {
+    type: String,
+    required: true,
+    validate: {
+      validator: isEmail,
+      message: props=> `${props.value} is not a valid email`
+    }
+  },
   username: { type: String, required: true },
   name: { type: String, required: true },
   password: { type: String, required: true },
