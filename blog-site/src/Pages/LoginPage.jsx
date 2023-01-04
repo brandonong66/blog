@@ -3,7 +3,9 @@ import React from "react"
 
 function LoginPage() {
   return (
-    <Container sx={{ display: "flex", justifyContent: "center" }}>
+    <Container
+      sx={{ display: "flex", height: "60vh",justifyContent: "center", alignItems: "center"}}
+    >
       <FormControl>
         <TextField
           name="email"
