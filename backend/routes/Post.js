@@ -4,11 +4,6 @@ const Post = require("../models/Post")
 const cors = require("cors")
 const sanitizeHtml = require("sanitize-html")
 
-const corsOptions = {
-  origin: "http://localhost:3000",
-  //   optionsSuccessStatus: 200,
-}
-
 // create new post
 router
   .route("/")
