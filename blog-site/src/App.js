@@ -8,12 +8,12 @@ import "@fontsource/roboto/400.css"
 import "@fontsource/roboto/500.css"
 import "@fontsource/roboto/700.css"
 
-import Navbar from "./components/Navbar/Navbar"
-import AboutPage from "./Pages/AboutPage"
+import AboutPage from "./Pages/AboutPage/AboutPage"
 import GalleryPage from "./Pages/GalleryPage/GalleryPage"
 import HomePage from "./Pages/HomePage/HomePage"
 import SwapPage from "./Pages/SwapPage"
-import LoginPage from "./Pages/LoginPage"
+import LoginPage from "./Pages/LoginPage/LoginPage"
+import LandingPage from "./Pages/LandingPage"
 
 import { ThemeProvider, createTheme } from "@mui/material/styles"
 import CssBaseline from "@mui/material/CssBaseline"
@@ -54,15 +54,16 @@ function App() {
             }}
           >
             <Container>
-              <Navbar />
+              
             </Container>
-            {/* <LandingPage imageSrc={LandingPageImage} /> */}
+            {/* <LandingPage imageSrc={require("./assets/All-0-1.jpg")} /> */}
             <Routes>
               <Route path="/post" element={<PostPage />} />
               <Route path="/24v-swap" element={<SwapPage />} />
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/login" element={<LoginPage />} />
+              {/* <Route path="/landing" element={<LandingPage />} /> */}
               <Route path="/" element={<HomePage />} />
             </Routes>
           </Box>

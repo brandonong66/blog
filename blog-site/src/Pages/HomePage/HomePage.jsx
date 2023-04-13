@@ -5,8 +5,9 @@ import axios from "axios"
 import { SyncLoader } from "react-spinners"
 import { ApiContext } from "../../App"
 import NewPostBox from "./NewPostBox"
-const POSTSPERPAGE = 4
 
+import Navbar from "../../components/Navbar/Navbar"
+const POSTSPERPAGE = 4
 
 const pageButtonCalculator = (currentPage, postCount) => {
   const pageNumbers = []
@@ -34,17 +35,18 @@ function HomePage() {
   const [postCount, setPostCount] = useState(0)
 
   useEffect(() => {
-    axios.get(ApiHost+"/posts/").then((response) => {
+    axios.get(ApiHost + "/posts/").then((response) => {
       setPosts(response.data)
       setLoading(false)
     })
-    axios.get(ApiHost+"/posts/count").then((response) => {
+    axios.get(ApiHost + "/posts/count").then((response) => {
       setPostCount(response.data.count)
     })
   }, [])
 
   return (
     <div>
+      <Navbar />
       {isLoading && (
         <SyncLoader style={{ position: "absolute", top: "50%", left: "50%" }} />
       )}
